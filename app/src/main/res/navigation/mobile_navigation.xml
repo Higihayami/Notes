@@ -7,12 +7,29 @@
 
     <fragment
         android:id="@+id/descriptionFragment"
-        android:name="com.example.notes.DescriptionFragment"
+        android:name="com.example.notes.presentation.description.DescriptionFragment"
         android:label="fragment_description"
-        tools:layout="@layout/fragment_description" />
+        tools:layout="@layout/fragment_description" >
+        <action
+            android:id="@+id/action_descriptionFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.notes.ListFragment"
+        android:name="com.example.notes.presentation.list.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_newNotesFragment"
+            app:destination="@id/newNotesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNotesFragment"
+        android:name="com.example.notes.presentation.newnotes.NewNotesFragment"
+        android:label="fragment_new_notes"
+        tools:layout="@layout/fragment_new_notes" >
+        <action
+            android:id="@+id/action_newNotesFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+    </fragment>
 </navigation>
